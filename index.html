@@ -46,6 +46,38 @@
     @media(max-width:720px){.problem-section{padding:34px 0 30px}.problem-visual{display:grid;width:min(100% - 28px,600px);aspect-ratio:auto;grid-template-columns:1fr;gap:16px}.problem-visual-image{position:relative;inset:auto;grid-row:2;width:100%;height:auto;aspect-ratio:1672/941;border:1px solid #e4f1e5;border-radius:22px;background:#f1faef;object-fit:cover;box-shadow:0 16px 40px #2d684515}.problem-copy{position:static;grid-row:1;max-width:100%}.problem-copy .section-kicker{margin-bottom:7px}.problem-copy .section-title{font-size:clamp(34px,8.5vw,48px);line-height:1.08}.problem-title-line{display:inline}.problem-title-line+.problem-title-line::before{content:" "}.problem-tags{position:static;grid-row:3;left:auto;right:auto;bottom:auto;gap:7px}.problem-tags li{min-height:38px;padding:7px 8px;border-radius:14px;font-size:10px}}
     @media(max-width:380px){.problem-visual{width:calc(100% - 24px)}.problem-tags{grid-template-columns:1fr}.problem-tags li{justify-content:flex-start;padding-inline:13px}}
     @media(prefers-reduced-motion:reduce){.problem-tags li{backdrop-filter:none}}
+    /* Operational comparison: concise copy, full uncropped illustrations, one clear left-to-right story. */
+    .solution-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(66px,7vw,104px) 0;background:linear-gradient(180deg,rgba(250,253,248,.9),rgba(241,250,241,.9))}
+    .solution-section::before,.solution-section::after{position:absolute;z-index:-1;content:"";width:440px;height:440px;border-radius:50%;filter:blur(2px);pointer-events:none}
+    .solution-section::before{top:-270px;left:-150px;background:radial-gradient(circle,#d9f2c2 0%,rgba(217,242,194,0) 72%)}
+    .solution-section::after{right:-180px;bottom:-300px;background:radial-gradient(circle,#c9f2d6 0%,rgba(201,242,214,0) 72%)}
+    .solution-wrap{position:relative}
+    .solution-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin:0 auto 36px;max-width:1050px}
+    .solution-head .section-kicker{margin-bottom:9px;color:#168653}
+    .solution-head .section-title{font-size:clamp(30px,3.5vw,46px);line-height:1.13}
+    .solution-note{display:flex;align-items:flex-start;gap:10px;max-width:270px;margin:0 0 5px;color:#637a8a;font-size:13px;line-height:1.65}
+    .solution-note b{color:#173858}
+    .solution-note-dot{flex:0 0 10px;width:10px;height:10px;margin-top:6px;border-radius:50%;background:#16b874;box-shadow:0 0 0 5px #16b87420}
+    .solution-flow{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);align-items:center;gap:12px;max-width:1100px;margin:0 auto}
+    .solution-panel{position:relative;isolation:isolate;display:flex;min-width:0;min-height:408px;flex-direction:column;overflow:hidden;padding:30px 32px 0;border:1px solid #dfeaf1;border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(240,247,253,.94));box-shadow:0 20px 60px rgba(31,76,107,.08);transition:transform .25s ease,box-shadow .25s ease}
+    .solution-panel:hover{transform:translateY(-4px);box-shadow:0 26px 70px rgba(31,76,107,.13)}
+    .solution-panel::before{position:absolute;z-index:-1;content:"";width:270px;height:270px;right:-70px;bottom:75px;border-radius:50%;background:radial-gradient(circle,rgba(178,218,255,.4),rgba(178,218,255,0) 72%)}
+    .solution-panel.parrot-panel{border-color:#d3eddd;background:linear-gradient(145deg,rgba(250,255,251,.98),rgba(231,248,238,.96))}
+    .solution-panel.parrot-panel::before{right:-30px;bottom:42px;width:320px;height:320px;background:radial-gradient(circle,rgba(116,224,166,.3),rgba(116,224,166,0) 72%)}
+    .solution-panel-copy{position:relative;z-index:1}
+    .solution-label{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:#71839a;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .solution-label::before{content:"";width:7px;height:7px;border-radius:50%;background:#91a2b7}
+    .parrot-panel .solution-label{color:#168653}.parrot-panel .solution-label::before{background:#12ac69;box-shadow:0 0 0 4px #12ac691f}
+    .solution-panel h3{max-width:390px;margin:0;font-size:clamp(23px,2.3vw,30px);line-height:1.18;letter-spacing:-.04em}
+    .solution-panel h3 em{color:#0da765;font-style:normal}
+    .solution-panel p{margin:9px 0 0;color:#627893;font-size:12px}
+    .solution-art{display:block;width:100%;height:268px;max-width:none;margin:auto auto 0;object-fit:contain;object-position:center bottom;mix-blend-mode:multiply}
+    .solution-bridge{position:relative;z-index:2;display:grid;place-items:center;width:54px;height:54px;border:1px solid #cfe8d9;border-radius:50%;color:#fff;background:linear-gradient(145deg,#17bd73,#07995a);box-shadow:0 10px 24px #07995a36;font-size:25px}
+    .solution-bridge::before,.solution-bridge::after{position:absolute;z-index:-1;top:50%;width:25px;border-top:1px dashed #9dcdb0;content:""}
+    .solution-bridge::before{right:100%}.solution-bridge::after{left:100%}
+    @media(max-width:900px){.solution-head{align-items:flex-start}.solution-panel{min-height:370px;padding:25px 24px 0}.solution-art{height:240px}}
+    @media(max-width:720px){.solution-section{padding:58px 0 64px}.solution-head{display:block;margin-bottom:24px}.solution-head .section-title{max-width:560px;font-size:clamp(31px,7.5vw,42px)}.solution-note{max-width:390px;margin-top:14px;font-size:12px}.solution-flow{grid-template-columns:1fr;gap:10px;max-width:560px}.solution-panel{min-height:0;padding:24px 23px 0;border-radius:25px}.solution-panel h3{font-size:25px}.solution-art{height:clamp(215px,64vw,300px);margin-top:10px}.solution-bridge{width:44px;height:44px;margin:-1px auto;border-color:#d6eadc;font-size:21px;transform:rotate(90deg)}.solution-bridge::before,.solution-bridge::after{width:20px}}
+    @media(max-width:420px){.solution-section{padding-block:48px}.solution-head .section-title{font-size:31px}.solution-panel{padding:21px 18px 0}.solution-panel h3{font-size:23px}.solution-art{height:220px}}
   </style>
 </head>
 <body>
@@ -88,12 +120,13 @@
         <ul class="problem-tags" aria-label="Các vấn đề thường gặp"><li>Lỡ cuộc gọi</li><li>Hỏi lại từ đầu</li><li>Khách vẫn gọi điện</li></ul>
       </figure>
     </section>
-    <section id="solution" class="section" aria-labelledby="solution-title">
-      <div class="wrap">
-        <div class="section-head"><p class="section-kicker">Hỗ trợ vận hành</p><h2 class="section-title" id="solution-title">AI tiếp nhận việc thường ngày,<br><em>nhân viên tập trung đúng lúc</em></h2></div>
-        <div class="compare-grid">
-          <article class="card compare-card traditional"><div><h3>Tổng đài truyền thống</h3><p class="sub">Nhiều thao tác cần nhân viên xử lý thủ công</p><ul class="check-list"><li>Có thể bỏ lỡ cuộc gọi giờ cao điểm</li><li>Hỏi lại thông tin đặt xe nhiều lần</li><li>Khó mở rộng khi lượng gọi tăng</li></ul></div><img class="compare-art" src="assets/operator-stressed.png" alt="Nhân viên tổng đài xử lý nhiều yêu cầu" loading="lazy" decoding="async"></article>
-          <article class="card compare-card parrot"><div><h3>ParrotGo hỗ trợ</h3><p class="sub">Tiếp nhận hội thoại và chuyển tiếp khi phù hợp</p><ul class="check-list"><li>Hỗ trợ nghe máy ngoài giờ cao điểm</li><li>Ghi nhận yêu cầu đặt xe qua hội thoại</li><li>Chuyển nhân viên khi cần hỗ trợ thêm</li></ul></div><img class="compare-art" src="assets/parrotgo-mascot.png" alt="Linh vật ParrotGo" loading="lazy" decoding="async"></article>
+    <section id="solution" class="solution-section" aria-labelledby="solution-title">
+      <div class="wrap solution-wrap">
+        <div class="solution-head"><div><p class="section-kicker">Hỗ trợ vận hành</p><h2 class="section-title" id="solution-title">Cuộc gọi vẫn được nhận.<br><em>Nhân viên rảnh tay đúng lúc.</em></h2></div><p class="solution-note"><span class="solution-note-dot" aria-hidden="true"></span><span>AI xử lý việc lặp lại <b>và gọi nhân viên khi cần.</b></span></p></div>
+        <div class="solution-flow" aria-label="So sánh tổng đài truyền thống và ParrotGo">
+          <article class="solution-panel traditional-panel"><div class="solution-panel-copy"><span class="solution-label">Tổng đài truyền thống</span><h3>Cuộc gọi dồn dập.</h3><p>Nhân viên khó kịp bắt máy.</p></div><img class="solution-art" src="assets/operator-stressed.png" alt="Nhân viên tổng đài đang xử lý nhiều cuộc gọi" loading="lazy" decoding="async"></article>
+          <div class="solution-bridge" aria-hidden="true">→</div>
+          <article class="solution-panel parrot-panel"><div class="solution-panel-copy"><span class="solution-label">ParrotGo hỗ trợ</span><h3>AI nghe máy.<br><em>Người hỗ trợ khi cần.</em></h3><p>Tiếp nhận · Ghi nhận · Chuyển tiếp</p></div><img class="solution-art" src="assets/parrotgo-mascot.png" alt="Linh vật vẹt ParrotGo hỗ trợ hội thoại" loading="lazy" decoding="async"></article>
         </div>
       </div>
     </section>
@@ -132,11 +165,11 @@
   <script>
     const modal=document.getElementById("demo-modal"),closeButton=modal.querySelector(".close"),micButton=document.getElementById("mic-button"),statusText=document.getElementById("demo-status"),menuToggle=document.querySelector(".menu-toggle"),nav=document.getElementById("site-nav");
     let lastFocused=null,recognition=null,listening=false;
-    const revealTargets=document.querySelectorAll(".section-head,.problem-copy,.problem-tags,.compare-card,.feature-card,.step-card,.handoff,.final-cta-inner");
+    const revealTargets=document.querySelectorAll(".section-head,.solution-head,.solution-panel,.problem-copy,.problem-tags,.feature-card,.step-card,.handoff,.final-cta-inner");
     if("IntersectionObserver" in window&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
       document.documentElement.classList.add("scroll-reveal-enabled");
       const revealObserver=new IntersectionObserver((entries,observer)=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:"0px 0px -36px 0px"});
-      revealTargets.forEach(element=>{element.classList.add("scroll-reveal");const siblings=[...element.parentElement.children].filter(item=>item.matches(".problem-card,.compare-card,.feature-card,.step-card"));const position=siblings.indexOf(element);element.style.setProperty("--reveal-delay",`${position>0?Math.min(position*85,255):0}ms`);revealObserver.observe(element)});
+      revealTargets.forEach(element=>{element.classList.add("scroll-reveal");const siblings=[...element.parentElement.children].filter(item=>item.matches(".problem-card,.solution-panel,.feature-card,.step-card"));const position=siblings.indexOf(element);element.style.setProperty("--reveal-delay",`${position>0?Math.min(position*85,255):0}ms`);revealObserver.observe(element)});
     }
     function openDemo(){lastFocused=document.activeElement;modal.hidden=false;document.body.classList.add("modal-open");closeButton.focus()}
     function closeDemo(){if(recognition&&listening){try{recognition.stop()}catch(error){}}modal.hidden=true;document.body.classList.remove("modal-open");listening=false;micButton.setAttribute("aria-pressed","false");micButton.setAttribute("aria-label","Bắt đầu nghe");statusText.textContent="Chạm micro để bắt đầu.";if(lastFocused&&typeof lastFocused.focus==="function")lastFocused.focus()}

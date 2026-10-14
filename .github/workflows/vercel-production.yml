@@ -1,0 +1,58 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vercel-production-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: team_zAvSsRqxO9Wxgdy6p9GI7QoP
+      VERCEL_PROJECT_ID: prj_phJ1cV9pO8akcd5RBjmLDVp7ihAL
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - name: Check Vercel credential
+        id: credential
+        shell: bash
+        run: |
+          if [[ -n "$VERCEL_TOKEN" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Add the VERCEL_TOKEN repository secret to enable deployments."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out repository
+        if: steps.credential.outputs.configured == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        if: steps.credential.outputs.configured == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Vercel CLI
+        if: steps.credential.outputs.configured == 'true'
+        run: npm install --global vercel@64.0.2
+
+      - name: Pull Vercel project settings
+        if: steps.credential.outputs.configured == 'true'
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build production output
+        if: steps.credential.outputs.configured == 'true'
+        run: vercel build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy production output
+        if: steps.credential.outputs.configured == 'true'
+        run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
